@@ -1,3 +1,4 @@
+/* Estilos gerais para a tela */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,10 +10,10 @@ body {
     background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;  
+    justify-content: center;  
+    position: relative;
 }
-
 
 body::before {
     background-image: url("img/code.png");
@@ -26,31 +27,36 @@ body::before {
     opacity: 0.4;
 }
 
+.texto__paragrafo {
+    font-size: 32px;          /* Ajusta o tamanho da fonte */
+    font-weight: 400;         /* Define o peso da fonte (regular) */
+    line-height: 1.5;         /* Ajusta o espaçamento entre as linhas para melhorar a legibilidade */
+    text-align: left;       /* Centraliza o texto */
+    color: #fff;              /* Define a cor do texto como branca */
+    margin: 20px 0;           /* Adiciona margem acima e abaixo do parágrafo */
+    font-family: 'Inter', sans-serif; /* Define a fonte usada no texto */
+}
+
 .container {
     width: 80%;
     height: 80%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     border-radius: 24px;
     border: 1px solid #1875E8;
     box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
     background-image: url("img/Ruido.png");
     background-size: 100% 100%;
     position: relative;
+    padding: 2rem;
 }
 
-
-.container__conteudo {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-}
-
-.container__informacoes {
-    flex: 1;
-    padding: 3rem;
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 72px;
+    padding-bottom: 3rem;
 }
 
 .container__botao {
@@ -64,14 +70,6 @@ body::before {
     margin-top: 2rem;
 }
 
-.container__texto {
-    margin: 16px 0 16px 0;
-}
-
-.container__texto-azul {
-    color: #1875E8;
-}
-
 .container__input {
     width: 100%;
     height: 72px;
@@ -79,62 +77,73 @@ body::before {
     background-color: #FFF;
     border: none;
     color: #1875E8;
-    padding: 2rem;
+    padding: 1rem;
     font-size: 24px;
     font-weight: 700;
     font-family: 'Inter', sans-serif;
 }
 
-.container__botoes {
-    display: flex;
-    gap: 2em;
-}
-
-h1 {
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 72px;
-    padding-bottom: 3rem;
-}
-
-p,
-button {
-    font-family: 'Inter', sans-serif;
-}
-
-.texto__paragrafo {
-    font-size: 32px;
-    font-weight: 400;
-}
-
-button:disabled {
-    background-color: gray;
-}
-
-@media screen and (max-width: 1250px) {
-
+@media screen and (max-width: 1200px) {
     h1 {
         font-size: 50px;
     }
 
     .container__botao {
+        font-size: 18px;
+        padding: 12px 20px;
+    }
+
+    .container__input {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 90%;
+        height: 70%;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .container__botao {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+
+    .container__input {
         font-size: 16px;
     }
+}
 
-
-    .texto__paragrafo {
-        font-size: 24px;
+@media screen and (max-width: 600px) {
+    body {
+        padding: 0;
     }
 
-    .container__imagem-pessoa {
-        display: none;
+    .container {
+        width: 95%;
+        height: auto;  /* Deixa a altura adaptável */
+        padding: 1rem;
     }
 
-    .container__conteudo {
-        display: block;
-        position: inherit;
+    h1 {
+        font-size: 30px;
     }
 
-    .container__informacoes {
-        padding: 1rem
+    .container__botao {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .container__input {
+        font-size: 14px;
     }
 }
